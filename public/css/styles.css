@@ -1,0 +1,870 @@
+:root {
+    --color-fondo: #2a2a38;
+    --color-texto: #FFFFFF;
+    --color-navbar: #15152b;
+    --color-ods: #DCA639;
+    --color-section: #1d1d27d7;
+    --fuente-principal: 'Arial', sans-serif;
+    --fuente-tamaño: 17px;
+    --fuente-tamaño-title: 1.3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    font-size: var(--fuente-tamaño);
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* 🌍🌱🌽=================== Barra de navegacion: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.header {
+    position: relative;
+    background: linear-gradient(rgba(43, 42, 42, 0.541), rgba(14, 13, 13, 0.664)),
+        url(../img/img1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container-menu {
+    background-color: var(--color-navbar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98.5%;
+    height: 55px;
+    padding: 0.8rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container-menu .logo img {
+    height: 3.7rem;
+    width: auto;
+}
+
+.scrolled {
+    background-color: rgb(21, 21, 43); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#logo-image {
+    height: 3.7rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.container-menu .nav-links {
+    list-style: none;
+}
+
+.container-menu .nav-links li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+.container-menu .nav-links li:hover {
+    background-color: var(--color-ods);
+    padding: 10px 25px;
+    border-radius: 12px;
+}
+
+.container-menu .nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--color-texto);
+}
+
+
+.container-menu .btn button,
+.btn-list button {
+    color: var(--color-texto);
+    font-size: 18px;
+    padding: 10px 25px;
+    background-color: var(--color-ods);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: var(--color-texto);
+    margin: 4px 0;
+}
+
+.container-menu .nav-links li.btn {
+    display: none;
+}
+
+.btn-list {
+    display: none;
+}
+
+#text-ods {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+#text-ods h1 {
+    font-size: 1.5rem;
+    line-height: 50px;
+    color: var(--color-ods);
+
+}
+
+#text-ods p {
+    font-size: var(--fuente-tamaño);
+}
+
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .container-menu .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 400px;
+        height: 100vh;
+        max-width: 1500px;
+        background-color: var(--color-navbar);
+        position: relative;
+        top: 75px;
+        right: 0;
+        z-index: 999;
+        margin-top: 550px;
+    }
+
+    .container-menu .nav-links li {
+        position: relative;
+        top: 15px;
+    }
+
+    .btn-list {
+        position: relative;
+        top: 40px;
+        text-align: center;
+    }
+
+    .menu-toggle:checked+.menu-icon+nav .nav-links {
+        display: flex;
+    }
+
+    .btn-list {
+        display: block;
+    }
+
+    #text-ods {
+        width: 90%;
+        top: 40%;
+        font-size: 16px;
+    }
+
+    .container-menu .nav-links li {
+        padding: 10px;
+        text-align: justify;
+        width: 84%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-menu {
+        padding: 0.5rem;
+    }
+
+    #text-ods {
+        font-size: 14px;
+    }
+
+    .container-menu .nav-links {
+        width: 250px;
+        height: 100vh;
+        padding: 10px;
+        top: 190px;
+    }
+
+    .container-menu .nav-links li {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .container-menu .btn button {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
+
+
+/* 🌍🌱🌽=================== Seccion de ¿que es la ODS?: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.info-ods {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 2rem 3rem;
+    padding: 1rem;
+    background-color: var(--color-section);
+    border-radius: 10px;
+    color: var(--color-texto);
+}
+
+.info-ods img {
+    position: relative;
+    max-width: 30%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.info-ods figcaption {
+    max-width: 56%;
+    margin-left: 1.8rem;
+}
+
+.info-ods h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-ods);
+}
+
+.info-ods p {
+    font-size: var(--fuente-tamaño);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .info-ods {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 1.5rem;
+    }
+
+    .info-ods img {
+        position: relative;
+        top: 20px;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .info-ods figcaption {
+        max-width: 90%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .info-ods h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-ods p {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .info-ods {
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+
+    .info-ods img {
+        max-width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    .info-ods figcaption {
+        max-width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .info-ods h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .info-ods p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* 🌍🌱🌽=================== Seccion de las 17 ODS: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.ods-title {
+    justify-content: center;
+    position: relative;
+    display: flex;
+}
+
+.ods-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.ods {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ods img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.ods .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-texto);
+    font-size: 1.1rem;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: transform 0.6s;
+    background-color: var(--color);
+    text-align: center;
+}
+
+
+.ods-title {
+    justify-content: center;
+    position: relative;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+}
+
+.ods-title img {
+    max-width: 100%;
+    height: auto;
+}
+
+.ods-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    gap: 55px;
+}
+
+.ods {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ods img {
+    width: 120%;
+    height: 120%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.ods .text {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: var(--fuente-tamaño);
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: transform 0.6s;
+    background-color: var(--color);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .ods {
+        width: 140px;
+        height: 140px;
+    }
+
+    .ods .text {
+        font-size: 1.1rem;
+    }
+
+    .ods-container {
+        padding: 30px 20px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ods {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ods .text {
+        font-size: 0.8rem;
+    }
+
+    .ods-container {
+        padding: 20px 10px;
+        gap: 30px;
+    }
+
+    .ods-title {
+        padding: 0;
+    }
+}
+
+/* 🌍🌱🌽=================== Seccion de la tierra 3D: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+
+#earth-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 3rem;
+    padding: 25px;
+    background-color: var(--color-section);
+    border-radius: 10px;
+}
+
+.earth-card {
+    position: relative;
+    height: auto;
+    border-radius: 15px;
+    width: 55%;
+}
+
+.earth-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-ods);
+}
+
+.earth-card p {
+    font-size: var(--fuente-tamaño);
+    line-height: 1.6;
+    color: var(--color-texto);
+}
+
+#earth-canvas {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #earth-section {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .earth-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .earth-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .earth-card p {
+        font-size: 0.9rem;
+    }
+
+    #earth-canvas {
+        width: 100%;
+        height: 200px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #earth-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .earth-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #earth-canvas {
+        width: 80%;
+        height: 100px;
+        border: none;
+    }
+}
+
+/* 🌍🌱🌽=================== Seccion de a linea de tiempo: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.title-timeline h1{
+    font-size: var(--fuente-tamaño-title);
+    color: var(--color-ods);
+    justify-self: center;
+    padding: 20px 0 50px 0;
+}
+.container-timeline{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 30px 0;
+}
+
+.timeline {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline ul {
+    list-style: none;
+}
+
+.timeline ul li {
+    padding: 20px;
+    background-color: #3b3b53;
+    color: var(--color-texto);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.timeline ul li:last-child{
+    margin-bottom: 0;
+}
+
+.timeline-content h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-ods);
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 300;
+}
+
+.timeline-content .date-timeline {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 2px;
+    letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .timeline::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: gray;
+        
+
+    }
+    .timeline ul li {
+        width: 48.2%; 
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .timeline ul li:nth-child(odd){
+        float: left;
+        clear: right;
+        transform: translateX(-50px);
+    }
+
+    .timeline ul li:nth-child(even){
+        float: right;
+        clear: left;
+        transform: translateX(50px);
+    }
+
+    .timeline ul li::after {
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: grey;
+        border-radius: 50%;
+    }
+
+    .timeline ul li:nth-child(odd)::after {
+        transform: translate(50%, -50%);
+        right: -30px;
+    }
+
+    .timeline ul li:nth-child(even)::after {
+        transform: translate(-50%, -50%);
+        left: -30px;
+    }
+
+    .timeline ul li:hover::after {
+        border: 3px solid var(--color-ods);
+        background-color: var(--color-navbar);
+    }
+
+    .timeline-content .date-timeline {
+        position: absolute;
+        top: -30px;
+
+    }
+}
+
+svg {
+    width: 25px;
+    height: 25px;
+}
+
+#scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid var(--color-ods);
+    background-color: #3b3b53;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#scroll-btn:hover {
+    background-color: var(--color-hover-buttom);
+}
+
+/* 🌍🌱🌽=================== Pie de pagina: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.footer {
+    background-color: var(--color-section);
+    padding: 40px;
+    border-top: 2px solid #ccc;
+    text-align: center;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.footer-section {
+    width: 30%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+.footer-logo {
+    text-align: center;
+}
+.footer-logo img {
+    width: 120px;
+}
+.footer-logo h1 {
+    color: var(--color-ods);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a:hover {
+    transform: scale(1.1);
+}
+.social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+.social-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Línea horizontal */
+.divider {
+    margin: 20px 0;
+    border-top: 2px solid #969696;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-section iframe {
+    width: 100%;
+    height: 250px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.footer-section iframe:hover {
+    transform: scale(1.05);
+}
+
+.footer-container h1 {
+    color: var(--color-ods);
+    line-height: 30px;
+}
+
+.contact-info p {
+    font-size: var(--fuente-tamaño);
+    margin: 5px 0;
+    line-height: 30px;
+}
+
+.contact-info strong {
+    color: var(--color-ods);
+}
+
+
+#contact-form {
+    background-color: #3b3b53;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-texto);
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #dca639;
+    border-radius: 8px;
+}
+
+#contact-form input {
+    background-color: #fff;
+}
+
+#contact-form textarea {
+    height: 70px;
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-ods);
+    color: var(--color-texto);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #b58825;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 90%;
+        text-align: center;
+    }
+
+    .footer-logo h1 {
+        font-size: 20px;
+    }
+
+    .social-media a img {
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo img {
+        width: 5rem;
+    }
+
+    .footer-logo h1 {
+        font-size: 18px;
+    }
+
+    .footer-section iframe {
+        height: 200px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 14px;
+    }
+}

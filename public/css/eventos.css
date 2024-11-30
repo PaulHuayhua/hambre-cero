@@ -1,0 +1,774 @@
+:root {
+    --color-fondo: #2a2a38;
+    --color-texto: #FFFFFF;
+    --color-navbar: #15152b;
+    --color-ods: #DCA639;
+    --color-section: #1d1d27;
+    --fuente-principal: 'Arial', sans-serif;
+    --fuente-tamaño: 17px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    font-size: var(--fuente-tamaño);
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* 🌍🌱🌽=================== Barra de navegacion: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.header {
+    position: relative;
+    background: linear-gradient(rgba(43, 42, 42, 0.541), rgba(14, 13, 13, 0.664)),
+        url(../img/fondo1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container-menu {
+    position: relative;
+    background-color: var(--color-navbar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98.5%;
+    height: 55px;
+    padding: 0.8rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container-menu .logo img {
+    height: 3.5rem;
+    width: auto;
+}
+
+.scrolled {
+    background-color: rgb(21, 21, 43);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#logo-image {
+    height: 3.7rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#logo-text {
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/*
+.scrolled #logo-image {
+    opacity: 0;
+    visibility: hidden;
+}
+*/
+
+.scrolled #logo-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.container-menu .nav-links {
+    list-style: none;
+}
+
+.container-menu .nav-links li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+.container-menu .nav-links li:hover {
+    background-color: var(--color-ods);
+    padding: 10px 25px;
+    border-radius: 12px;
+}
+
+.container-menu .nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--color-texto);
+}
+
+
+.container-menu .btn button,
+.btn-list button {
+    color: var(--color-texto);
+    font-size: 18px;
+    padding: 10px 25px;
+    background-color: var(--color-ods);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: var(--color-texto);
+    margin: 4px 0;
+}
+
+.container-menu .nav-links li.btn {
+    display: none;
+}
+
+.btn-list {
+    display: none;
+}
+
+#text-ods {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+#text-ods h1 {
+    font-size: 1.5rem;
+    line-height: 50px;
+    color: var(--color-ods);
+
+}
+
+#text-ods p {
+    font-size: var(--fuente-tamaño);
+}
+
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .container-menu .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        max-width: 300px;
+        background-color: var(--color-navbar);
+        position: fixed;
+        top: 75px;
+        right: 0;
+        z-index: 999;
+    }
+
+    .container-menu .nav-links li {
+        position: relative;
+        top: 15px;
+    }
+
+    .btn-list {
+        position: relative;
+        top: 40px;
+        text-align: center;
+    }
+
+    .menu-toggle:checked+.menu-icon+nav .nav-links {
+        display: flex;
+    }
+
+    .btn-list {
+        display: block;
+    }
+
+    .container-menu .nav-links li {
+        padding: 10px;
+        text-align: justify;
+        width: 84%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-menu {
+        padding: 0.5rem;
+    }
+
+    #text-ods {
+        font-size: 14px;
+    }
+
+    .container-menu .nav-links {
+        width: 100vh;
+        height: 100vh;
+        padding: 10px;
+        position: fixed;
+        top: 70px;
+    }
+
+    .container-menu .nav-links li {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .container-menu .btn button {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
+
+/* 🌍🌱🌽=================== Seccion de eventos: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+#showDate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px !important;
+    text-align: center;
+}
+
+#showDate p {
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+/* 🌍🌱🌽=================== Sección de la Galería: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.gallery-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery-title h2 {
+    line-height: 2.3;
+    font-size: 1.6rem;
+    color: var(--color-ods);
+}
+
+.gallery-title p {
+    font-size: var(--fuente-tamaño);
+    color: var(--color-texto);
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+.gallery .container-images img {
+    width: 100%;
+    display: block;
+}
+
+.item img {
+    visibility: hidden;
+}
+
+.container-images {
+    margin: 2rem auto;
+    padding: 1rem 0 2.4rem;
+    text-align: center;
+    max-width: 50rem;
+    justify-content: center;
+
+}
+
+.item {
+    width: 12rem;
+    height: 12rem;
+    position: relative;
+    display: inline-block;
+    margin: 0.4rem;
+    transition: transform 0.3s;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+    background-color: var(--color-ods);
+    clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+    transform: scale(1.077);
+}
+
+.item:hover::before {
+    transform: scale(1.154);
+}
+
+.item a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(50% 0, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+}
+
+@supports (display: grid) {
+
+    @media (min-width: 272px) {
+        .container-images {
+            justify-content: center;
+            display: grid;
+            max-width: 240px;
+            grid-template-columns: repeat(3, 96px);
+        }
+
+        .item {
+            grid-column: span 2;
+            margin: 0;
+            margin-bottom: -1.4rem;
+        }
+
+        .item:nth-child(even) {
+            grid-column: 2;
+        }
+    }
+
+    @media (min-width: 480px) {
+        .container-images {
+            max-width: 320px;
+            grid-template-columns: repeat(4, 96px);
+        }
+
+        .item:nth-child(3n + 1) {
+            grid-column: 1;
+        }
+
+        .item:nth-child(3n + 2) {
+            grid-column: 3;
+        }
+
+        .item:nth-child(3n + 0) {
+            grid-column: 2;
+        }
+    }
+
+    @media (min-width: 512px) {
+        .container-images {
+            max-width: 480px;
+            grid-template-columns: repeat(6, 96px);
+        }
+
+        .item:nth-child(5n + 1) {
+            grid-column: 1;
+        }
+
+        .item:nth-child(5n + 2) {
+            grid-column: 3;
+        }
+
+        .item:nth-child(5n + 3) {
+            grid-column: 5;
+        }
+
+        .item:nth-child(5n + 4) {
+            grid-column: 2;
+        }
+
+        .item:nth-child(5n + 0) {
+            grid-column: 4;
+        }
+    }
+
+    @media (min-width: 780px) {
+        .container-images {
+            max-width: 640px;
+            grid-template-columns: repeat(8, 96px);
+        }
+
+        .item:nth-child(7n + 1) {
+            grid-column: 1;
+        }
+
+        .item:nth-child(7n + 2) {
+            grid-column: 3;
+        }
+
+        .item:nth-child(7n + 3) {
+            grid-column: 5;
+        }
+
+        .item:nth-child(7n + 4) {
+            grid-column: 7;
+        }
+
+        .item:nth-child(7n + 5) {
+            grid-column: 2;
+        }
+
+        .item:nth-child(7n + 6) {
+            grid-column: 4;
+        }
+
+        .item:nth-child(7n + 0) {
+            grid-column: 6;
+        }
+    }
+
+    @media (min-width: 864px) {
+        .container-images {
+            max-width: 800px;
+            grid-template-columns: repeat(10, 96px);
+        }
+
+        .item:nth-child(9n + 1) {
+            grid-column: 1;
+        }
+
+        .item:nth-child(9n + 2) {
+            grid-column: 3;
+        }
+
+        .item:nth-child(9n + 3) {
+            grid-column: 5;
+        }
+
+        .item:nth-child(9n + 4) {
+            grid-column: 7;
+        }
+
+        .item:nth-child(9n + 5) {
+            grid-column: 9;
+        }
+
+        .item:nth-child(9n + 6) {
+            grid-column: 2;
+        }
+
+        .item:nth-child(9n + 7) {
+            grid-column: 4;
+        }
+
+        .item:nth-child(9n + 8) {
+            grid-column: 6;
+        }
+
+        .item:nth-child(9n + 0) {
+            grid-column: 8;
+        }
+    }
+}
+
+/* 🌍🌱🌽=================== Ventana modal: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.829);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 80%;
+    max-width: 450px;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border: 2px solid var(--color-ods);
+    border-radius: 25px;
+}
+
+.close {
+    position: absolute;
+    top: 13%;
+    right: 80px;
+    color: var(--color-texto);
+    font-size: 40px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-ods);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.download {
+    display: block;
+    margin: 15px auto;
+    color: var(--color-texto);
+    text-decoration: none;
+    background-color: var(--color-ods);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.download:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .close {
+        top: 8%;
+        right: 80px;
+        font-size: 45px;
+    }
+
+    .modal-content {
+        position: relative;
+        right: 15px;
+        max-height: 300px;
+        justify-content: center;
+    }
+
+    .download {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .close {
+        top: 8%;
+        right: 60px;
+        font-size: 35px;
+    }
+
+    .modal-content {
+        max-height: 250px;
+    }
+
+    .download {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+svg {
+    width: 25px;
+    height: 25px;
+}
+
+#scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid var(--color-ods);
+    background-color: #3b3b53;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#scroll-btn:hover {
+    background-color: var(--color-hover-buttom);
+}
+
+/* 🌍🌱🌽=================== Pie de pagina: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.footer {
+    background-color: var(--color-section);
+    padding: 40px;
+    border-top: 2px solid #ccc;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 120px;
+}
+
+.footer-logo h1 {
+    color: var(--color-ods);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a:hover {
+    transform: scale(1.1);
+}
+
+.social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Línea horizontal */
+.divider {
+    margin: 20px 0;
+    border-top: 2px solid #969696;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-section iframe {
+    width: 100%;
+    height: 250px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.footer-section iframe:hover {
+    transform: scale(1.05);
+}
+
+.footer-container h1 {
+    color: var(--color-ods);
+    line-height: 30px;
+}
+
+.contact-info p {
+    font-size: var(--fuente-tamaño);
+    margin: 5px 0;
+    line-height: 30px;
+}
+
+.contact-info strong {
+    color: var(--color-ods);
+}
+
+
+#contact-form {
+    background-color: #3b3b53;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-texto);
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #dca639;
+    border-radius: 8px;
+}
+
+#contact-form input {
+    background-color: #fff;
+}
+
+#contact-form textarea {
+    height: 70px;
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-ods);
+    color: var(--color-texto);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #b58825;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 90%;
+        text-align: center;
+    }
+
+    .footer-logo h1 {
+        font-size: 20px;
+    }
+
+    .social-media a img {
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo img {
+        width: 5rem;
+    }
+
+    .footer-logo h1 {
+        font-size: 18px;
+    }
+
+    .footer-section iframe {
+        height: 200px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 14px;
+    }
+}

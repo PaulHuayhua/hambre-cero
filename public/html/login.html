@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div class="welcome-section">
+        <h1>Bienvenido a nuestra página de Agricultura Sostenible</h1>
+        <p>Descubre soluciones y recursos para apoyar el ODS 2: <strong>Agricultura Sostenible</strong>.</p>
+        <p>Inicia sesión, regístrate o accede como invitado para empezar.</p>
+    </div>
+    
+    <div class="form-section">
+        <div id="login-form">
+            <h2>Iniciar Sesión</h2>
+            <form id="login">
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('register')">¿No tienes una cuenta? Regístrate aquí</p>
+        </div>
+        <div id="register-form" style="display: none;">
+            <h2>Registro</h2>
+            <form id="register">
+                <input type="text" name="username" placeholder="Nombre de usuario" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" name="confirm-password" placeholder="Confirmar contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('login')">¿Ya tienes una cuenta? Inicia sesión aquí</p>
+        </div>
+        <div class="guest-link">
+            <p>¿Prefieres unirte como invitado? <a href="../html/inicio.html">Haz clic aquí</a></p>
+        </div>
+    </div>
+    <script src="../js/loginManager.js"></script>
+    <script src="../js/contact.js"></script>
+
+</body>
+
+</html>

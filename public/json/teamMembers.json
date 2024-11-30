@@ -1,0 +1,22 @@
+{
+    "teamMembers": [
+        {
+            "name": "Paul Huayhua",
+            "role": "Developer",
+            "image": "https://avatars.githubusercontent.com/u/170690691?v=4",
+            "bio": "Paul es un analista de sistemas con experiencia en el desarrollo de aplicaciones web. Su pasión por la tecnología lo ha llevado a trabajar en proyectos de impacto social."
+        },
+        {
+            "name": "Yon Navarro",
+            "role": "Developer",
+            "image": "https://avatars.githubusercontent.com/u/140716065?v=4",
+            "bio": "Yon es un analista de sistemas con experiencia en el desarrollo de sistemas de información. Su pasión por la tecnología lo ha llevado a trabajar en proyectos de impacto social."
+        },
+        {
+            "name": "Christian Chumpitaz",
+            "role": "Developer",
+            "image": "https://avatars.githubusercontent.com/u/112652888?s=400&v=4",
+            "bio": "Christian es un analista de sistemas con experiencia en el desarrollo de software. Su pasión por la tecnología lo ha llevado a trabajar en proyectos de impacto social."
+        }
+    ]
+}

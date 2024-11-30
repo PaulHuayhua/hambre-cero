@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODS: Hambre Cero</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../css/objetivo2.css">
+    <link rel="icon" href="../img/logo.png" type="icon" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-menu">
+            <div class="logo">
+                <a href="../index.html"><img src="../img/logo.png" alt="logo"></a>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="objetivo2.html">ODS 2: Hambre Cero</a></li>
+                    <li><a href="desafios.html">Desafíos Globales</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <a href="actuaYa.html" class="btn-list"><button>¡Actua Ya!</button></a>
+                </ul>
+            </nav>
+
+            <a href="actuaYa.html" class="btn"><button>¡Actua Ya!</button></a>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-slides">
+                <div class="slide">
+                    <img src="https://enfoquenoticias.com.mx/wp-content/uploads/2024/07/hambre.webp" alt="Slide 1">
+                    <div class="text-overlay">
+                        <h2>Cultivando un futuro sin hambre</h2>
+                        <p><em>Promovemos la innovación agrícola y prácticas sostenibles para garantizar<br> que cada
+                                persona tenga acceso a alimentos suficientes y saludables.</em></p>
+                        <a href="#">Leer más</a>
+                    </div>
+                    <div class="title-center">HAMBRE CERO: SEGURIDAD ALIMENTARIA PARA TODOS</div>
+                </div>
+                <div class="slide">
+                    <img src="https://unaindustriasaludable.com/wp-content/uploads/2018/07/el-aporte-de-la-industria-a-la-meta-hambre-cero-1024x582.jpg"
+                        alt="Slide 2">
+                    <div class="text-overlay">
+                        <h2>Alimentos nutritivos para todos</h2>
+                        <p><em>Trabajamos para asegurar que todas las comunidades, sin importar su ubicación, <br>tengan
+                                acceso a alimentos ricos en nutrientes y esenciales para la vida.</em></p>
+                        <a href="#">Leer más</a>
+                    </div>
+                    <div class="title-center">CULTIVANDO UN MUNDO SIN HAMBRE: ODS 2 EN ACCION</div>
+                </div>
+                <div class="slide">
+                    <img src="https://img.rtve.es/imagenes/mapa-inseguridad-alimentaria-hambre-cuales-son-causas-tiene-solucion/1673632106467.jpg"
+                        alt="Slide 3">
+                    <div class="text-overlay">
+                        <h2>Soluciones globales contra el hambre.</h2>
+                        <p><em>Apoyamos iniciativas a nivel mundial que buscan erradicar el <br>hambre mediante
+                                estrategias colaborativas y sostenibles.</em></p>
+                        <a href="#">Leer más</a>
+                    </div>
+                    <div class="title-center">EL DESAFIO DEL HAMBRE CERO: ACCIONES PARA UN MEJOR MUNDO</div>
+                </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="ods-section">
+            <div class="ods-container">
+                <img src="https://sostenibilidad.cientifica.edu.pe/wp-content/uploads/2021/08/SDG-2.gif"
+                    alt="Logo del ODS 2: Hambre Cero" class="ods-image">
+                <div class="ods-description">
+                    <h1>ODS 2: Hambre Cero</h1>
+                    <p>El Objetivo de Desarrollo Sostenible 2 (ODS 2): Hambre Cero busca erradicar el hambre y
+                        garantizar el acceso a alimentos suficientes, seguros y nutritivos para todas las personas,
+                        especialmente las más vulnerables. Se centra en mejorar la calidad de la alimentación, combatir
+                        la malnutrición y promover prácticas agrícolas sostenibles. Este objetivo es esencial para
+                        construir un mundo más justo y equitativo, donde nadie pase hambre y todos puedan llevar una
+                        vida sana y productiva.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="swiper mySwiper">
+            <h1>RELACIONES ENTRE LAS ODS</h1>
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 01</h3>
+                            <p>La erradicación de la pobreza es fundamental para asegurar el acceso a alimentos
+                                suficientes. Las personas que viven en pobreza extrema tienen menos acceso a alimentos y
+                                servicios básicos.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods01" src="../img/swiper01.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 03</h3>
+                            <p> Una nutrición adecuada es esencial para la salud. La falta de alimentos o de alimentos
+                                nutritivos puede llevar a problemas de salud y desnutrición.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods03" src="../img/swiper03.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 04</h3>
+                            <p>La educación puede mejorar la seguridad alimentaria al enseñar técnicas agrícolas
+                                modernas y sostenibles, y al aumentar la capacidad de las personas para superar la
+                                inseguridad alimentaria.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods04" src="../img/swiper04.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 05</h3>
+                            <p> Las mujeres desempeñan un papel clave en la agricultura y la seguridad alimentaria.
+                                Empoderar a las mujeres y garantizar su acceso a recursos puede mejorar la producción de
+                                alimentos y la nutrición.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods05" src="../img/swiper05.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 06</h3>
+                            <p> El acceso a agua limpia es esencial para la producción de alimentos y la salud. La
+                                gestión adecuada del agua puede mejorar la producción agrícola y reducir el riesgo de
+                                enfermedades transmitidas por el agua.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods06" src="../img/swiper06.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 07</h3>
+                            <p>La energía es necesaria para la producción y distribución de alimentos. Mejorar el acceso
+                                a energía limpia y asequible puede ayudar en la producción agrícola y en la conservación
+                                de alimentos.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods07" src="../img/swiper07.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 8</h3>
+                            <p>El sector agrícola es una fuente importante de empleo. Mejorar la productividad agrícola
+                                puede crear empleos y fomentar el crecimiento económico, lo que a su vez puede reducir
+                                el hambre.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods08" src="../img/swiper08.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 9</h3>
+                            <p>Las inversiones en infraestructura y tecnología pueden mejorar la cadena de suministro de
+                                alimentos, reducir las pérdidas poscosecha y aumentar la eficiencia en la producción de
+                                alimentos.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods09" src="../img/swiper09.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 10</h3>
+                            <p>La inseguridad alimentaria a menudo afecta más a los grupos marginados. Reducir las
+                                desigualdades económicas y sociales puede mejorar el acceso a alimentos y recursos.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods10" src="../img/swiper10.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 11</h3>
+                            <p>La planificación urbana y el desarrollo sostenible pueden contribuir a la seguridad
+                                alimentaria al reducir el desperdicio de alimentos y mejorar el acceso a mercados
+                                locales.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods11" src="../img/swiper11.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 12</h3>
+                            <p>La reducción del desperdicio de alimentos y la adopción de prácticas agrícolas
+                                sostenibles son esenciales para lograr el hambre cero.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods12" src="../img/swiper12.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="ods/logo.jpg" alt="">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 13</h3>
+                            <p>El cambio climático afecta la producción de alimentos y puede aumentar el riesgo de
+                                hambre. Las medidas para mitigar el cambio climático pueden ayudar a garantizar la
+                                seguridad alimentaria a largo plazo.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods13" src="../img/swiper13.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="ods/logo.jpg" alt="">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 14</h3>
+                            <p>La pesca es una fuente crucial de proteínas para muchas personas. La gestión sostenible
+                                de los océanos y la pesca es importante para asegurar el suministro de alimentos
+                                marinos.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods14" src="../img/swiper14.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="ods/logo.jpg" alt="">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 15</h3>
+                            <p>La degradación del suelo y la pérdida de biodiversidad pueden afectar la producción de
+                                alimentos. Proteger y restaurar los ecosistemas terrestres es vital para la seguridad
+                                alimentaria.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods15" src="../img/swiper15.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="ods/logo.jpg" alt="">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 16</h3>
+                            <p>La estabilidad política y la gobernanza efectiva son necesarias para implementar
+                                políticas agrícolas eficaces y garantizar el acceso a alimentos.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods16" src="../img/swiper16.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="ods/logo.jpg" alt="">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                    <div class="ods-content">
+                        <div class="ods-text">
+                            <h3>ODS 17</h3>
+                            <p>La cooperación internacional y las alianzas son esenciales para enfrentar los desafíos
+                                globales relacionados con la seguridad alimentaria y la nutrición.</p>
+                        </div>
+                        <div class="ods-img">
+                            <img id="ods17" src="../img/swiper17.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="indicador">
+            <h1 class="section-title">Exploración de Indicadores del ODS 2</h1>
+            <div class="container-graphic">
+                <div class="chart">
+                    <canvas id="barChart" width="650" height="300"></canvas>
+                </div>
+                <div class="indicator-text">
+                        <h2>Adopción de la Agricultura Sostenible y su Relación con el ODS 2</h2>
+                        <p>La adopción de prácticas de agricultura sostenible es fundamental para garantizar la seguridad alimentaria y 
+                            proteger los recursos naturales. Este gráfico presenta la evolución de la implementación de estas prácticas 
+                            entre 2013 y 2023, destacando tendencias clave. Este indicador está vinculado al ODS 2: Hambre Cero, cuyo 
+                            objetivo es promover sistemas agrícolas sostenibles que mejoren la producción de alimentos y protejan el 
+                            medio ambiente. La agricultura sostenible es esencial para enfrentar el cambio climático y asegurar un 
+                            futuro resiliente para las generaciones venideras.
+                        </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <h2>Comentarios</h2>
+            <div class="comment-container">
+                <!-- Formulario de comentario -->
+                <div class="form-container">
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comentario">Comentario:</label>
+                            <textarea id="comentario" name="comentario" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Enviar Comentario</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contenedor de comentarios -->
+                <div class="comments-container">
+                    <ul id="commentsList">
+                        <!-- Aquí se insertarán los comentarios dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+            </svg>
+        </button>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="../img/logo.png" alt="Agro Futuro Logo">
+            <h1>AGRO-FUTURO</h1>
+            <div class="social-media">
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="../img/tik-tok.png" alt="TikTok">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="../img/whatsapp.png" alt="Whatsapp">
+                </a>
+                <a href="https://twitter.com/" target="_blank">
+                    <img src="../img/twitter.png" alt="Twitter">
+                </a>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h1><strong>Nos ubicamos en:</strong></h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1943.1424116389196!2d-76.38717340316654!3d-13.081126727505588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff935c4a035bb%3A0x1b32f04916c31d1c!2sIES%20Valle%20Grande!5e0!3m2!1ses!2spe!4v1729521864828!5m2!1ses!2spe"
+                    width="450" height="250" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h1><strong>Contáctanos:</strong></h1>
+                <p><strong>Correo:</strong> contacto@agrofuturo.com</p>
+                <p><strong>Teléfono:</strong> +51 999-999-999</p>
+                <p><strong>Oficina:</strong> Av. Los Agricultores 123, Ica, Perú</p>
+                <p><strong>Horario de atención:</strong> Lunes a Viernes de 9:00 am a 6:00 pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h1><strong>Envíanos un mensaje:</strong></h1>
+                <form id="contact-form">
+                    <input type="text" id="nombre" placeholder="Nombre completo" required>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="../js/barChartConfig.js"></script>
+    <script src="../js/swiperConfig.js"></script>
+    <script src="../js/carouselControl.js"></script>
+    <script src="../js/comments.js"></script>
+    <script src="../js/contact.js"></script>
+    <script src="../js/scrollToTop.js"></script>
+
+</body>
+
+</html>

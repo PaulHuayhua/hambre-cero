@@ -1,0 +1,873 @@
+:root {
+    --color-fondo: #1c1c27;
+    --color-texto: #f7f7f7;
+    --color-navbar: #15152b;
+    --color-ods: #FFB400;
+    --color-accion: #FFC000;
+    --color-section: #2a2a38;
+    --fuente-principal: 'Arial', sans-serif;
+    --fuente-tamaño: 17px;
+    --fuente-tamaño-title: 1.6rem;
+    --fuente-tamaño-subtitle: 1.2rem;
+    --fuente-tamaño-button: 1.1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-principal);
+    font-size: var(--fuente-tamaño);
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 🌍🌱🌽=================== Barra de navegacion: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.header {
+    position: relative;
+    background: linear-gradient(rgba(43, 42, 42, 0.541), rgba(14, 13, 13, 0.664)),
+        url(../img/fondo2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container-menu {
+    background-color: var(--color-navbar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98.5%;
+    height: 55px;
+    padding: 0.8rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container-menu .logo img {
+    height: 3.7rem;
+    width: auto;
+}
+
+.scrolled {
+    background-color: rgb(21, 21, 43);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.container-menu .nav-links {
+    list-style: none;
+}
+
+.container-menu .nav-links li {
+    display: inline-block;
+    padding: 0 25px;
+}
+
+.container-menu .nav-links li:hover {
+    background-color: var(--color-ods);
+    padding: 10px 25px;
+    border-radius: 12px;
+}
+
+.container-menu .nav-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--color-texto);
+}
+
+
+.container-menu .btn button,
+.btn-list button {
+    color: var(--color-texto);
+    font-size: 18px;
+    padding: 10px 25px;
+    background-color: var(--color-ods);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: var(--color-texto);
+    margin: 4px 0;
+}
+
+.container-menu .nav-links li.btn {
+    display: none;
+}
+
+.btn-list {
+    display: none;
+}
+
+#text-ods {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+#text-ods h1 {
+    font-size: 1.5rem;
+    line-height: 50px;
+    color: var(--color-ods);
+
+}
+
+#text-ods p {
+    font-size: var(--fuente-tamaño);
+}
+
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .container-menu .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        max-width: 300px;
+        background-color: var(--color-navbar);
+        top: 75px;
+        right: 0;
+        z-index: 999;
+    }
+
+    .container-menu .nav-links li {
+        position: relative;
+        top: 15px;
+    }
+
+    .btn-list {
+        position: relative;
+        top: 40px;
+        text-align: center;
+    }
+
+    .menu-toggle:checked+.menu-icon+nav .nav-links {
+        display: flex;
+    }
+
+    .btn-list {
+        display: block;
+    }
+
+    #text-ods {
+        width: 90%;
+        top: 40%;
+        font-size: 16px;
+    }
+
+    .container-menu .nav-links li {
+        padding: 10px;
+        text-align: justify;
+        width: 84%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-menu {
+        padding: 0.5rem;
+    }
+
+    #text-ods {
+        font-size: 14px;
+    }
+
+    .container-menu .nav-links {
+        width: 100vh;
+        height: 100vh;
+        padding: 10px;
+        top: 70px;
+    }
+
+    .container-menu .nav-links li {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .container-menu .btn button {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+}
+
+/* 🌍🌱🌽=================== Seccion de producto: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.container-products {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.product-images {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+}
+
+.product-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-ods);
+    font-size: var(--fuente-tamaño-title);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--color-ods);
+    margin-bottom: 20px;
+    font-size: var(--fuente-tamaño-subtitle);
+}
+
+.main-image-container {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.main-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.main-image:hover {
+    transform: scale(1.1);
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-left: 45px;
+}
+
+.thumbnail:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.description ul li::before {
+    content: "• ";
+    color: var(--color-ods);
+}
+
+.price {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--color-ods);
+}
+
+.cta-button {
+    background-color: var(--color-accion);
+    color: var(--color-fondo);
+    border: none;
+    padding: 15px 30px;
+    font-size: var(--fuente-tamaño-button);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.cta-button:hover {
+    background-color: #FF9E00;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .product-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-info {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .price {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-products {
+        padding: 10px;
+    }
+
+    .product-section {
+        gap: 20px;
+    }
+
+    .product-images,
+    .product-info {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .h1,
+    .h2,
+    .h3 {
+        font-size: 1.5em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .price {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 1.2em;
+        align-self: center;
+        margin-bottom: 15px;
+    }
+
+    .thumbnail-container {
+        justify-content: center;
+    }
+
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+        margin-left: 5px;
+    }
+}
+
+
+/* 🌍🌱🌽=================== Seccion de donaciones: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.center-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 2rem;
+    background-color: var(--color-fondo);
+}
+
+.container-donation {
+    width: 50%;
+    left: 50px;
+}
+
+.additional-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.donation-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.info-container {
+    color: var(--color-texto);
+}
+
+.info-container h3 {
+    font-size: 1.5rem;
+    color: var(--color-ods);
+}
+
+.info-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #cccccc;
+}
+
+.learn-more-btn {
+    color: var(--color-ods);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    color: #ffea00;
+}
+
+.donation-box {
+    border: 2px solid var(--color-ods);
+    border-radius: 15px;
+    padding: 2rem;
+    background-color: var(--color-section);
+    transition: transform 0.3s ease;
+}
+
+.donation-box:hover {
+    transform: translateY(-5px);
+}
+
+.donation-box h2 {
+    color: var(--color-ods);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description-donation {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-ods);
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 93%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-ods);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-texto);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ffea00;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.donate-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-ods);
+    color: var(--color-navbar);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.donate-btn:hover {
+    background-color: #ffea00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.thank-you-message {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.thank-you-message h3 {
+    color: var(--color-ods);
+    margin-bottom: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-ods);
+    transition: width 0.5s ease;
+}
+
+.goal {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+@media (max-width: 768px) {
+    .center-wrapper {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .container-donation {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .additional-content {
+        width: 80%;
+        margin-top: 2rem;
+    }
+
+    .donation-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .donate-btn {
+        font-size: 1rem;
+    }
+
+    .donation-image {
+        max-width: 250px;
+    }
+
+    .info-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .info-container p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-wrapper {
+        padding: 1rem;
+    }
+
+    .container-donation {
+        width: 90%;
+    }
+
+    .additional-content {
+        width: 90%;
+        margin-top: 1.5rem;
+    }
+
+    .donation-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .donate-btn {
+        font-size: 0.9rem;
+    }
+
+    .donation-image {
+        max-width: 200px;
+    }
+
+    .info-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-container p {
+        font-size: 0.8rem;
+    }
+}
+
+svg {
+    width: 25px;
+    height: 25px;
+}
+
+#scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid var(--color-ods);
+    background-color: #3b3b53;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#scroll-btn:hover {
+    background-color: var(--color-hover-buttom);
+}
+
+/* 🌍🌱🌽=================== Pie de pagina: ODS 2 - Hambre Cero ===================🌽🌱🌍 */
+.footer {
+    background-color: var(--color-section);
+    padding: 40px;
+    border-top: 2px solid #ccc;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 120px;
+}
+
+.footer-logo h1 {
+    color: var(--color-ods);
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a:hover {
+    transform: scale(1.1);
+}
+
+.social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Línea horizontal */
+.divider {
+    margin: 20px 0;
+    border-top: 2px solid #969696;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-section iframe {
+    width: 100%;
+    height: 250px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.footer-section iframe:hover {
+    transform: scale(1.05);
+}
+
+.footer-container h1 {
+    color: var(--color-ods);
+    line-height: 30px;
+}
+
+.contact-info p {
+    font-size: var(--fuente-tamaño);
+    margin: 5px 0;
+    line-height: 30px;
+}
+
+.contact-info strong {
+    color: var(--color-ods);
+}
+
+
+#contact-form {
+    background-color: #3b3b53;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-texto);
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #dca639;
+    border-radius: 8px;
+}
+
+#contact-form input {
+    background-color: #fff;
+}
+
+#contact-form textarea {
+    height: 70px;
+}
+
+#contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-ods);
+    color: var(--color-texto);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #b58825;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 400px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 90%;
+        text-align: center;
+    }
+
+    .footer-logo h1 {
+        font-size: 20px;
+    }
+
+    .social-media a img {
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        margin-top: 200px;
+    }
+
+    .footer-logo img {
+        width: 5rem;
+    }
+
+    .footer-logo h1 {
+        font-size: 18px;
+    }
+
+    .footer-section iframe {
+        height: 200px;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 14px;
+    }
+}
